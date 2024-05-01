@@ -1,0 +1,13 @@
+Crie um programa que verifica se um número inteiro informado pelo usuário é divisível por 3
+
+def verificar_divisibilidade_por_3(numero):
+    if numero % 3 == 0:
+        print("O número", numero, "é divisível por 3.")
+    else:
+        print("O número", numero, "não é divisível por 3.")
+
+# Lendo o número do usuário
+numero = int(input("Digite um número inteiro: "))
+
+# Chamando a função para verificar a divisibilidade por 3
+verificar_divisibilidade_por_3(numero)
