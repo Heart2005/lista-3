@@ -1,0 +1,15 @@
+Faça um algoritmo que leia os valores A, B, C e imprima na tela se a soma de A + B é menor que A + C.
+
+def verificar_soma_menor(A, B, C):
+    if A + B < A + C:
+        print("A soma de A + B é menor que A + C.")
+    else:
+        print("A soma de A + B não é menor que A + C.")
+
+# Lendo os valores A, B e C do usuário
+A = float(input("Digite o valor de A: "))
+B = float(input("Digite o valor de B: "))
+C = float(input("Digite o valor de C: "))
+
+# Chamando a função para verificar a condição
+verificar_soma_menor(A, B, C)
