@@ -1,0 +1,30 @@
+Brincadeira do PAR ou ÍMPAR. Pergunte para o usuário se ele aposta em PAR ou ÍMPAR. Depois disso, peça para ele digitar um número de 0 a 5 (como se fosse mostrar os dedos da mão. Sorteie um número de 0 a 5 e some com o que o usuário digitou. Se o usuário escolheu PAR e o valor da soma for par OU se ele escolheu ÍMPAR e o valor da soma é ímpar, diga que ele venceu. Senão, diga que o programa venceu
+
+import random
+
+def par_ou_impar():
+    escolha_usuario = input("Você escolhe PAR ou ÍMPAR? ").upper()
+    
+    while escolha_usuario not in ['PAR', 'ÍMPAR']:
+        print("Escolha inválida. Por favor, escolha PAR ou ÍMPAR.")
+        escolha_usuario = input("Você escolhe PAR ou ÍMPAR? ").upper()
+    
+    numero_usuario = int(input("Escolha um número de 0 a 5: "))
+    
+    while numero_usuario < 0 or numero_usuario > 5:
+        print("Número inválido. Por favor, escolha um número de 0 a 5.")
+        numero_usuario = int(input("Escolha um número de 0 a 5: "))
+    
+    numero_aleatorio = random.randint(0, 5)
+    soma = numero_usuario + numero_aleatorio
+    
+    print(f"Você escolheu {escolha_usuario} e digitou o número {numero_usuario}.")
+    print(f"O computador escolheu o número {numero_aleatorio}.")
+    
+    if (escolha_usuario == 'PAR' and soma % 2 == 0) or (escolha_usuario == 'ÍMPAR' and soma % 2 != 0):
+        print("Você venceu!")
+    else:
+        print("O programa venceu!")
+
+# Chamando a função para iniciar o jogo
+par_ou_impar()
