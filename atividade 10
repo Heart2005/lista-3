@@ -1,0 +1,18 @@
+Dados não precisam ser tão “quadrados”, ou cúbicos para ser mais exato. Faça um programa que simule dados de 4, 6, 8, 10, 12 ou 16 faces (apenas estes valores). Peça para o usuário informar no começo do programa quantas faces quer, para depois fazer o sorteio.
+
+import random
+
+def simular_lancamento_dados(num_faces):
+    resultado = random.randint(1, num_faces)
+    return resultado
+
+# Pedir ao usuário o número de faces do dado
+num_faces = int(input("Quantas faces você quer no dado (4, 6, 8, 10, 12 ou 16)? "))
+
+# Verificar se o número de faces é válido
+if num_faces not in [4, 6, 8, 10, 12, 16]:
+    print("Número de faces inválido. Por favor, escolha entre 4, 6, 8, 10, 12 ou 16.")
+else:
+    # Simular o lançamento do dado
+    resultado_lancamento = simular_lancamento_dados(num_faces)
+    print("O resultado do lançamento é:", resultado_lancamento)
