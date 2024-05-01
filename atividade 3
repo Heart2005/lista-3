@@ -1,0 +1,17 @@
+Encontrar o dobro de um número caso ele seja positivo e o seu triplo caso seja negativo, imprimindo o resultado.
+
+def calcular_dobro_ou_triplo(numero):
+    if numero > 0:
+        resultado = numero * 2
+        print("O dobro do número é:", resultado)
+    elif numero < 0:
+        resultado = numero * 3
+        print("O triplo do número é:", resultado)
+    else:
+        print("O número é zero, não há dobro nem triplo.")
+
+# Lendo o número do usuário
+numero = float(input("Digite um número: "))
+
+# Chamando a função para calcular o dobro ou triplo
+calcular_dobro_ou_triplo(numero)
