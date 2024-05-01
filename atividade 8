@@ -1,0 +1,21 @@
+Um comerciante comprou um produto e quer vendê-lo com lucros diferentes dependendo do valor da compra. Ele quer um lucro de 45% se o valor da compra for menor que R$ 20,00, 35% se o preço for de até 50 reais e lucro de 25% se valor for maior. Entrar com o valor do produto e imprimir na tela o valor de venda.
+
+def calcular_preco_venda(valor_compra):
+    if valor_compra < 20:
+        lucro_percentual = 0.45  # 45%
+    elif valor_compra <= 50:
+        lucro_percentual = 0.35  # 35%
+    else:
+        lucro_percentual = 0.25  # 25%
+    
+    preco_venda = valor_compra * (1 + lucro_percentual)
+    return preco_venda
+
+# Solicitar ao usuário o valor do produto
+valor_compra = float(input("Digite o valor de compra do produto: R$"))
+
+# Calcular o preço de venda
+preco_venda = calcular_preco_venda(valor_compra)
+
+# Exibir o preço de venda
+print("O preço de venda do produto é: R$", preco_venda)
