@@ -1,0 +1,15 @@
+Escreva um programa que leia dois números e efetue uma divisão, mas somente se o divisor for diferente de zero; quando isto ocorrer, é mostrada uma mensagem de erro apropriada.
+
+def fazer_divisao(dividendo, divisor):
+    if divisor == 0:
+        print("Erro: Divisão por zero não é permitida.")
+    else:
+        resultado = dividendo / divisor
+        print("O resultado da divisão é:", resultado)
+
+# Lendo os números do usuário
+dividendo = float(input("Digite o dividendo: "))
+divisor = float(input("Digite o divisor: "))
+
+# Chamando a função para efetuar a divisão
+fazer_divisao(dividendo, divisor)
