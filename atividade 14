@@ -1,0 +1,44 @@
+Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do
+conveniado considerando que todos pagam R$ 300 e mais um adicional (se tiver dependentes)
+conforme a seguinte tabela:
+a) crianças com menos de 10 anos pagam R$100;
+b) dependentes com idade entre 10 e 30 anos pagam R$220;
+c) dependentes com idade entre 31 e 60 anos pagam R$ 395; e
+d) dependentes com mais de 60 anos pagam R$ 480.
+
+def calcular_valor_plano(idade_conveniado, num_dependentes):
+    valor_total = 300  # Valor base do plano de saúde
+    
+    # Verificar idade do conveniado e adicionar o valor correspondente
+    if idade_conveniado < 10:
+        valor_total += 100
+    elif 10 <= idade_conveniado <= 30:
+        valor_total += 220
+    elif 31 <= idade_conveniado <= 60:
+        valor_total += 395
+    else:
+        valor_total += 480
+    
+    # Verificar idade dos dependentes e adicionar o valor correspondente
+    for _ in range(num_dependentes):
+        idade_dependente = int(input("Digite a idade do dependente: "))
+        if idade_dependente < 10:
+            valor_total += 100
+        elif 10 <= idade_dependente <= 30:
+            valor_total += 220
+        elif 31 <= idade_dependente <= 60:
+            valor_total += 395
+        else:
+            valor_total += 480
+    
+    return valor_total
+
+# Solicitar a idade do conveniado e o número de dependentes
+idade_conveniado = int(input("Digite a idade do conveniado: "))
+num_dependentes = int(input("Digite o número de dependentes: "))
+
+# Calcular o valor total do plano de saúde
+valor_total_plano = calcular_valor_plano(idade_conveniado, num_dependentes)
+
+# Exibir o valor total a ser pago
+print("O valor total a ser pago pelo plano de saúde é: R$", valor_total_plano)
