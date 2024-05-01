@@ -1,0 +1,45 @@
+Faça um programa que leia a nota do Grau A e do Grau B do aluno e calcule a média final conforme as regras da Unisinos. Imprima a média final na tela e diga se o aluno passou por média ou se ficou em recuperação (grau C). Se o aluno ficou em recuperação, pergunte se ele quer substituir o Grau A ou o Grau B (ele deve digitar ‘a’ ou ‘b’). Leia a nota do Grau C, recalcule a média de acordo com o grau substituído e imprima na tela o resultado, informando se ele foi aprovado ou reprovado.
+
+def calcular_media_final(grau_a, grau_b):
+    return (grau_a + 2 * grau_b) / 3.0
+
+# Ler as notas do Grau A e do Grau B
+grau_a = float(input("Digite a nota do Grau A: "))
+grau_b = float(input("Digite a nota do Grau B: "))
+
+# Calcular a média final
+media_final = calcular_media_final(grau_a, grau_b)
+
+# Verificar se o aluno passou, ficou em recuperação ou foi reprovado
+if media_final >= 7.0:
+    print("Média final:", media_final)
+    print("Parabéns! Você foi aprovado.")
+elif media_final >= 4.0:
+    print("Média final:", media_final)
+    print("Você ficou em recuperação.")
+
+    # Perguntar qual grau o aluno deseja substituir
+    substituir = input("Você deseja substituir o Grau A ou o Grau B? (Digite 'a' ou 'b'): ")
+
+    # Ler a nota do Grau C
+    grau_c = float(input("Digite a nota do Grau C: "))
+
+    # Recalcular a média final de acordo com o grau substituído
+    if substituir == 'a':
+        nova_media_final = calcular_media_final(grau_c, grau_b)
+    elif substituir == 'b':
+        nova_media_final = calcular_media_final(grau_a, grau_c)
+    else:
+        print("Opção inválida.")
+        exit()
+
+    # Exibir o resultado final
+    if nova_media_final >= 5.0:
+        print("Nova média final:", nova_media_final)
+        print("Você foi aprovado após a recuperação.")
+    else:
+        print("Nova média final:", nova_media_final)
+        print("Você foi reprovado após a recuperação.")
+else:
+    print("Média final:", media_final)
+    print("Você foi reprovado.")
